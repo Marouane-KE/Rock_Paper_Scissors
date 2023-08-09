@@ -16,11 +16,7 @@ const playRound =(playerSelection, computerSelection) =>{
 
     // if (playerSelection!=='ROCK' || playerSelection!=='ROCK' || playerSelection!=='ROCK') {
 
-    while (!['ROCK','PAPER','SCISSORS'].includes(playerSelection)) {
-        
-       console.log("pleas Choose one of 'ROCK','PAPER' or 'SCISSORS'  ")
-    }   
-        
+
     if (playerSelection==computerSelection) {
         return 'Draw'
     }
@@ -43,14 +39,22 @@ const playRound =(playerSelection, computerSelection) =>{
 
 // console.log(playRound(playerSelection,computerSelection))
 
-
+  
+     
 const game=()=>{
     let playerCounter=0;
     let pcCounter=0;
     for (let i = 0; i < 5; i++) {
-        let alr = prompt(" Choose one of 'ROCK','PAPER' or 'SCISSORS'")
+
+        let alr = prompt(" Choose one of 'ROCK','PAPER' or 'SCISSORS'").toUpperCase()
+        console.log(alr)
         let computerSelection=getComputerChoice();
-        let playerSelection=alr.toUpperCase();
+        // while (alr!=='ROCK' || alr!=='PAPER'|| alr!=='SCISSORS') {
+            
+        //      alr = prompt(" Choose one of 'ROCK','PAPER' or 'SCISSORS'").toUpperCase()
+        //     console.log(alr)
+        // }   
+        let playerSelection=alr;
         
         if (playRound(playerSelection,computerSelection).includes('win')){
         playerCounter++
